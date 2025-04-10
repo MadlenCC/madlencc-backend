@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+// src/models/Content.js
+const mongoose = require('mongoose');
 
 const contentSchema = new mongoose.Schema({
   name: { type: String, required: true },
   image: { type: String, required: true },
-  description: { type: String },
   category: { type: String },
   age: { type: [String] },
   patreonLink: { type: String }
@@ -11,4 +11,4 @@ const contentSchema = new mongoose.Schema({
 
 const Content = mongoose.model('Content', contentSchema);
 
-export default Content;
+module.exports = Content;

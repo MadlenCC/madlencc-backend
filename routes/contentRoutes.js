@@ -1,5 +1,5 @@
-import express from 'express';
-import { getContents, createContent } from '../controllers/contentController.js';
+const express = require('express');
+const { getContents, createContent, deleteContent } = require('../controllers/contentController');
 
 const router = express.Router();
 
@@ -9,4 +9,7 @@ router.get('/', getContents);
 // POST /api/contents
 router.post('/', createContent);
 
-export default router;
+// DELETE /api/contents/:id
+router.delete('/:id', deleteContent);
+
+module.exports = router;
